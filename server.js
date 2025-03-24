@@ -42,6 +42,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'API de listas de compras' });
+});
+
 // Rota para buscar todas as listas
 app.get('/api/lists', authenticateToken, async (req, res) => {
   try {
